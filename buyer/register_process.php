@@ -131,56 +131,56 @@ if (!mysqli_query($conn, $sql)) {
 ========================== */
 
 try {
-
     $mail = getMailer();
-
     $mail->addAddress($email, $fullname);
-
+    $mail->isHTML(true);
     $mail->Subject = "Welcome to Brew Haven";
-
     $mail->Body = "
+        <h2>Welcome to Brew Haven ☕</h2>
 
-    <h2>Welcome to Brew Haven ☕</h2>
-
-    <p>Hi <strong>$fullname</strong>,</p>
-
-    <p>
-
-    Thank you for creating your Brew Haven account.
-
-    Your registration was successful.
-
-    You may now log in and enjoy ordering
-    handcrafted coffee, pastries and desserts.
-
-    </p>
-
-    <br>
-
-    <p>
-
-    Thank you,
-
-    <br>
-
-    <strong>Brew Haven Team</strong>
-
-    </p>
-
+        <p>Hi <strong>{$fullname}</strong>,</p>
+        <p>
+            Thank you for creating your Brew Haven account.
+            Your registration was successful.
+        </p>
+        <p>
+            You may now
+            <a href='https://br3whaven.infinityfreeapp.com/buyer/login.php'>Log in</a>
+            and enjoy ordering handcrafted coffee, pastries, and desserts.
+        </p>
+        <br>
+        <p>
+            Thank you,<br>
+            <strong>Brew Haven Team</strong>
+        </p>
     ";
+    $mail->AltBody = "Welcome to Brew Haven!
+
+Hi {$fullname},
+
+Thank you for creating your Brew Haven account.
+Your registration was successful.
+
+Log in here:
+https://br3whaven.infinityfreeapp.com/buyer/login.php
+
+Enjoy ordering handcrafted coffee, pastries, and desserts.
+
+Thank you,
+Brew Haven Team";
 
     $mail->send();
 
 } catch (Exception $e) {
-
-    // Ignore email errors for now
+    error_log("PHPMailer Error: " . $mail->ErrorInfo);
+    $_SESSION['message'] = "Your account was created successfully, but we couldn't send the welcome email.";
 }
 
 /* ==========================
    SUCCESS
 ========================== */
 
-$_SESSION['message'] = "Registration successful! Please check your email.";
+$_SESSION['message'] = "Registration successful! Please check your email. Also check your spam folder.";
 
 $_SESSION['messageClass'] = "success";
 
