@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: sql208.infinityfree.com
--- Generation Time: Jul 12, 2026 at 12:21 PM
+-- Generation Time: Jul 13, 2026 at 08:37 AM
 -- Server version: 11.4.12-MariaDB
 -- PHP Version: 7.2.22
 
@@ -180,7 +180,9 @@ CREATE TABLE `password_resets` (
 --
 
 INSERT INTO `password_resets` (`id`, `email`, `otp`, `expires_at`, `is_used`, `created_at`) VALUES
-(1, 'pacozyril@gmail.com', '633827', '2026-07-08 04:08:02', 1, '2026-07-08 07:58:03');
+(1, 'pacozyril@gmail.com', '633827', '2026-07-08 04:08:02', 1, '2026-07-08 07:58:03'),
+(2, 'zyrilpaco@gmail.com', '839836', '2026-07-12 12:32:21', 1, '2026-07-12 16:22:20'),
+(3, 'z55547679@gmail.com', '995916', '2026-07-12 12:39:49', 1, '2026-07-12 16:29:48');
 
 -- --------------------------------------------------------
 
@@ -278,7 +280,11 @@ INSERT INTO `users` (`id`, `fullname`, `email`, `password`, `address`, `contact`
 (6, 'Duwayne Jan Ruiz', 'ruizduwayne7@gmail.com', '$2y$10$Eh0oAh82kgyNkedX0OQg5u0RIY7fpXe/a2agbT04jgCrvj2pv20FO', '9 King John St. Del Rey VIlle 2 Subdivision Camarin, Caloocan City', '09497626174', 'buyer', 'Active', '2026-07-11 11:18:44'),
 (7, 'Justin Mark', 'just@gmail.com', '$2y$10$.DYlQ61IykVDS3764B7BNOKRmI33iGdWuGpf8JBk9JycyBuiBMibG', 'Manila', '09457874565', 'buyer', 'Active', '2026-07-11 12:11:21'),
 (8, 'Beng Beng Marcos', 'jaywoh479@gmail.com', '$2y$10$Q2uIRpCxRpMKgJKb1TZrHOddvgCtXX9a/fP3t3DIlsv2D8TIEzma.', 's', '09123456789', 'buyer', 'Active', '2026-07-12 16:11:17'),
-(9, 'John Zyril Paco', 'zyrilpaco@gmail.com', '$2y$10$Zzur1w7NRLRWeIuzrrYZNeuh4fXsNV.rDe2K4/AA/yosEjdkU85CC', 'Commonwealth', '09472376124', 'buyer', 'Active', '2026-07-12 16:16:31');
+(9, 'John Zyril Paco', 'zyrilpaco@gmail.com', '$2y$10$AqAE4lhSrpsUxhbYgh80jeQRw40PBWm5S.esHONve2HuJnqUqvYl6', 'Commonwealth', '09472376124', 'buyer', 'Active', '2026-07-12 16:16:31'),
+(10, 'Karltzy', 'z55547679@gmail.com', '$2y$10$knL2bp0arwMyLVA3XI79keW9CAwZLpahFKRxZtFS5UUfIrRe9fJw2', 'k', '09726667291', 'buyer', 'Active', '2026-07-12 16:21:27'),
+(11, 'John Zyril Paco', 'johnzyrilapaco@gmail.com', '$2y$10$dTBQ.6wRyWdAkx.QXdPaWupnHqFX9X.R7tMUKuASDLCSvf1u49NBG', 'Commonwealth', '12345679', 'buyer', 'Active', '2026-07-13 03:41:20'),
+(12, 'User1', 'user1@gmail.com', '$2y$10$MnwH3kpNHDDrbzSOL8f4NeWk6EMFwNUw84bgmMZTnyv2CPpWUJRIC', 'User1', '09123456789', 'buyer', 'Active', '2026-07-13 10:12:22'),
+(13, 'user2', 'user2@gmail.com', '$2y$10$rHYy.14Lf0YXs9M6QmOmgeN2qqgqcD5vePyzedDR2LZBPomA2.mIm', 'u', '09987654321', 'buyer', 'Active', '2026-07-13 11:32:51');
 
 --
 -- Indexes for dumped tables
@@ -379,7 +385,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `password_resets`
 --
 ALTER TABLE `password_resets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -391,7 +397,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
